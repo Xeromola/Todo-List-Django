@@ -1,0 +1,10 @@
+
+.modal-body {
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.to-do-item {
+    word-break: break-all;
+    padding-right: 4px;
+}
