@@ -15,3 +15,10 @@ def home(request):
 def del_item(request, pk):
     todo_item.objects.get(id=pk).delete()
     return redirect('/')
+
+def edit_item(request, pk):
+    if request.method == "POST":
+        it = todo_item.objects.get(id=pk)
+        it.title = request.POST['todoitem']
+        it.save()
+    return redirect('/')
