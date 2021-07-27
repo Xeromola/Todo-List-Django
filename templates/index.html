@@ -32,7 +32,7 @@
 			<button class="btn btn-outline-primary" type="submit" id="button-addon2">Submit</button>
 		</div>
 	</form>
-	<div class="px-5">
+	<div class="px px-md-5">
 		<ul class="list-group text-wrap"> 
          {% for item in items %}
 			<li class="list-group-item list-group-item-light d-flex justify-content-between align-items-center" style="background-color:  	#F5F5F5;"> <span class="to-do-item"><b>{{item.title}}</b></span>
@@ -48,8 +48,10 @@
 				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content">
 						<div class="modal-header text-white bg-success">
-							<h4 class="modal-title" id="exampleModalLabel"><b>Great! {{item.title}}</b></h4> </div>
-						<div class="modal-body"> You've completed your task :) </div>
+							<h4 class="modal-title" id="exampleModalLabel"><b>Great!</b></h4> </div>
+						<div class="modal-body"> You've completed your task :) 
+							<br> The developer is working on this feature. It will be released in future update.
+						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Close</button>
 						</div>
@@ -64,7 +66,7 @@
 						<form method="POST" action="edit/{{item.pk}}"> 
                      {% csrf_token %}
 							<div class="modal-body">
-								<input type="text" id="todoitem" name="todoitem" class="form-control" type="text" value={{item.title}} aria-describedby="button-addon2"> </div>
+								<input type="text" id="todoitem" name="todoitem" class="form-control" type="text" value="{{item.title}}" aria-describedby="button-addon2"> </div>
 							<div class="modal-footer">
 								<button type="submit" class="btn btn-outline-warning" data-bs-dismiss="modal">Edit</button>
 							</div>
